@@ -8,6 +8,6 @@ git clone https://github.com/sergioisidoro/hamfax-qt5
 cp -r debian hamfax-qt5
 
 cd hamfax-qt5
-dpkg-buildpackage -b -d -uc -us -j4
+dpkg-buildpackage -b -d -uc -us
 
 

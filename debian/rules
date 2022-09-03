@@ -10,7 +10,6 @@ configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
 	autoreconf -f -i
-	./configure --prefix=/usr
 	touch configure-stamp
 
 build: build-arch build-indep
@@ -21,7 +20,7 @@ build-stamp:
 
 	# Add here commands to compile the package.
 	autoreconf -f -i
-	./configure
+	./configure --prefix=/usr
 	$(MAKE) docdir='$${prefix}/share/doc/hamfax'
 
 	#/usr/bin/docbook-to-man debian/hamfax.sgml > hamfax.1
