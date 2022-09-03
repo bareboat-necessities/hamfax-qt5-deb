@@ -20,6 +20,8 @@ build-stamp:
 	dh_testdir
 
 	# Add here commands to compile the package.
+	autoreconf -f -i
+	./configure
 	$(MAKE) docdir='$${prefix}/share/doc/hamfax'
 
 	#/usr/bin/docbook-to-man debian/hamfax.sgml > hamfax.1
