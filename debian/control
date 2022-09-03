@@ -1,0 +1,19 @@
+Source: hamfax
+Section: hamradio
+Priority: optional
+Maintainer: Debian Hamradio Maintainers <debian-hams@lists.debian.org>
+Uploaders: Kamal Mostafa <kamal@whence.com>, Jaime Robles <jaime@debian.org>, Patrick Ouellette <pouelle@debian.org>, Hamish Moffatt <hamish@debian.org>
+Homepage: http://hamfax.sourceforge.net/
+Build-Depends: debhelper (>= 7), pkg-config, libaudiofile-dev, libasound2-dev [linux-any], libhamlib-dev, libqt5-dev, qt5-dev-tools
+Standards-Version: 3.9.2
+
+Package: hamfax
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Receive/send radio facsimile transmissions with Soundcard/PTC-II
+ With this package you can send or receive radio facsimile transmissions
+ using either a Linux-supported soundcard or an SCS PTC-II data controller.
+ .
+ Radio facsimile transmission are used most commonly by meteorological
+ bureaus to provide weather maps to aircraft and shipping.
+

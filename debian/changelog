@@ -1,0 +1,149 @@
+hamfax (0.8.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add Build-Depends: libhamlib-dev to enable hamlib PTT support.
+  * Disable ALSA support on !linux platforms since ALSA-OSS wrapper does not
+    provide 'snd_pcm_recover' (Closes: #635876).
+    - restrict Build-Depends: libasound2-dev [linux-any]
+  * Add debian/rules recommended targets build-{arch,indep}.
+
+ -- Kamal Mostafa <kamal@whence.com>  Fri, 29 Jul 2011 11:34:01 -0700
+
+hamfax (0.8-1) unstable; urgency=low
+
+  * New upstream release (Closes: #625181, #604499, LP: #770985).
+  * Switch to source/format "3.0 (quilt)".
+  * Update for Qt4: Build-Depends; omit ./configure param --with-qt-includes.
+  * Add Build-Depends: pkg-config
+  * Add Build-Depends: libasound2-dev to enable ALSA support.
+  * Update watch file.
+  * Update Standards-Version and Uploaders.
+  * Update debian/copyright dates, author email address, format.
+  * Removed empty preinst, prerm.
+  * Update debian/{compat,rules} and debhelper dependency for debhelper 7.
+    - use dh_prep instead of dh_clean -k
+    - omit explicit dh_installman
+
+ -- Kamal Mostafa <kamal@whence.com>  Wed, 27 Jul 2011 10:29:20 -0700
+
+hamfax (0.6.4-5.1) unstable; urgency=low
+
+  * Retiring - remove myself from the uploaders list.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Sat, 14 Nov 2009 14:12:57 +0000
+
+hamfax (0.6.4-5) unstable; urgency=low
+
+  * Remove stale Makefile from the .diff.gz, which is causing
+    'debian/rules clean' to fail on a fresh unpack (closes: 465518)
+
+ -- Hamish Moffatt <hamish@debian.org>  Wed, 13 Feb 2008 10:20:47 +1100
+
+hamfax (0.6.4-4) unstable; urgency=low
+
+  * Remove build-dependency on libqt3-compat-headers (closes: #464423)
+  * Update to debhelper 4, bump standards-revision to 3.7.2.
+
+ -- Hamish Moffatt <hamish@debian.org>  Sun, 10 Feb 2008 12:55:34 +1100
+
+hamfax (0.6.4-3) unstable; urgency=low
+
+  * Transfer ownership to Debian-Hams.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Sun,  1 Apr 2007 20:26:48 +0200
+
+hamfax (0.6.4-2) unstable; urgency=low
+
+  * Build against transitioned Qt.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Thu,  1 Sep 2005 19:09:27 +0200
+
+hamfax (0.6.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Thu, 14 Oct 2004 18:51:30 +0200
+
+hamfax (0.6.3-3) unstable; urgency=low
+
+  * Patch by Andreas Jochens for gcc-3.4, thanks! Closes: #265119.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Thu, 12 Aug 2004 19:24:48 +0200
+
+hamfax (0.6.3-2) unstable; urgency=low
+
+  * Watch file added.
+  * To prevent scrolling sideways, uncheck "Options->automatic scroll to last
+    received line" in the menu. Closes: #262373.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Mon,  9 Aug 2004 23:14:09 +0200
+
+hamfax (0.6.3-1) unstable; urgency=low
+
+  * New upstream release, update to Qt3 (closes: #187905).
+  * New maintainer. Closes: #192248, #187870.
+  * Update standards version.
+  * Fix some lintian errors.
+  * Include a small manual page.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Mon,  9 Aug 2004 23:13:56 +0200
+
+hamfax (0.5.2-1.2) unstable; urgency=low
+
+  * NMU
+  * Correct ia64-specific brokenness in the rules: need 'else ifeq'
+    instead of 'elseif' (closes: #192248).
+
+ -- Steve Langasek <vorlon@debian.org>  Fri,  9 May 2003 22:54:48 -0500
+
+hamfax (0.5.2-1.1) unstable; urgency=low
+
+  * NMU
+  * Build-depend on older versions of gcc, since the package hasn't been
+    updated to build with Qt3.
+  * Disable -O2 g++ optimization on alpha (closes: #187905).
+  * Move /usr/share/doc/HamFax to /usr/share/doc/hamfax, per policy
+    (closes: #187870).
+
+ -- Steve Langasek <vorlon@debian.org>  Sun,  4 May 2003 10:41:06 -0500
+
+hamfax (0.5.2-1) unstable; urgency=low
+
+  * New upstream source, bug-fixes only.
+
+ -- Terry Dawson <terry@animats.net>  Tue, 11 Dec 2001 21:07:37 +1000
+
+hamfax (0.5.1-1) unstable; urgency=low
+
+  * New upstream source, bug-fixes only.
+
+ -- Terry Dawson <terry@animats.net>  Thu, 27 Sep 2001 20:39:10 +1000
+
+hamfax (0.5-1) unstable; urgency=low
+
+  * New upstream source
+  * This version of hamfax supports selecting the port speed, so I'm no
+    longer limiting the speed to 38400.
+
+ -- Terry Dawson <terry@animats.net>  Fri, 07 Sep 2001 21:26:23 +1000
+
+hamfax (0.3-2) unstable; urgency=low
+
+  * cleaned up the configure/make/debhelper interaction
+
+ -- Terry Dawson <terry@animats.net>  Tue, 23 Jul 2001 21:09:23 +1000
+
+hamfax (0.3-1) unstable; urgency=low
+
+  * New version.
+  * Serial port speed dropped to 38400 as some serial cards aren't able
+    to do 57600bps (my stallion multiport included!)
+
+ -- Terry Dawson <terry@animats.net>  Tue, 22 Jul 2001 13:44:00 +1000
+
+hamfax (0.1-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #101472)
+
+ -- Terry Dawson <terry@animats.net>  Tue, 19 Jun 2001 20:40:08 +1000
+
